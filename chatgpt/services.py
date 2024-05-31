@@ -35,3 +35,13 @@ def chat(code: str, type: str) -> str:
     temperature=0.9)
     return response.choices[0].message.content
 
+def makeImage(keyword: str) -> str:
+    response = client.images.generate(
+        model="dall-e-3",
+        prompt=f"Create a minimalist homepage for {keyword} with a clean design. The page should feature a large banner showcasing a few high-quality grocery products like snacks and beverages, neatly arranged with adequate white space and margins. Use a soft, pastel color palette with a light blue background to create a fresh look. The navigation bar at the top should include simple categories such as 'Home', 'Shop', 'Deals', and 'Contact'. Include a centered search bar and icons for login and shopping cart aligned to the right. Below the banner, display a section for featured deals with only a few product images and brief descriptions, ensuring elements are evenly spaced and not too close to the edges. Maintain a clean, balanced, and easy-to-navigate layout. Do not include any images of monitors or screens.",
+        size="1024x1024",
+        quality="standard",
+        n=1,
+    )
+    return response.data[0].url
+
