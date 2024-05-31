@@ -1,2 +1,4 @@
-from pydantic import Basemodel
-class RefactorRequest(Basemodel):
+from pydantic import BaseModel
+class RefactorRequest(BaseModel):
+    previousCode: str
+    type: str
