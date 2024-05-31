@@ -26,7 +26,7 @@ def chat(code: str, type: str) -> str:
     prompt = gpt_prompt(request)
 
     # OpenAI GPT-3.5 모델을 사용하여 API 호출
-    response = client.chat.completions.create(model="gpt-3.5-turbo",
+    response = client.chat.completions.create(model="gpt-4",
     messages=[
         {"role": "system", "content": prompt},
         {"role": "user", "content": code},
