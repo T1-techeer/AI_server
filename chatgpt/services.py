@@ -34,3 +34,4 @@ def chat(code: str, type: str) -> str:
     max_tokens=500,
     temperature=0.9)
     return response.choices[0].message.content
+
